@@ -15,9 +15,25 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="KeyboardView" customModule="semaphore_keyboard" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBz-n0-E1b">
+                    <rect key="frame" x="310" y="250" width="49" height="30"/>
+                    <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="didTapSubmitButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZNW-aq-fSb"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bBz-n0-E1b" secondAttribute="trailing" constant="16" id="7de-9T-REI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bBz-n0-E1b" secondAttribute="bottom" constant="20" id="rjz-dN-ZEM"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="submitButton" destination="bBz-n0-E1b" id="4EA-gb-j8L"/>
+            </connections>
         </view>
     </objects>
 </document>

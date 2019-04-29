@@ -42,11 +42,11 @@ class KeyboardViewController: UIInputViewController {
             keyboardView.bottomAnchor.constraint(equalTo: inputView.bottomAnchor)
             ])
         
+        keyboardView.delegate = self
         setupGestureRecognizer(for: keyboardView)
         
         view.addSubview(indexLabel)
         indexLabel.text = "Index: "
-        
         
         inputView.translatesAutoresizingMaskIntoConstraints = false
         inputView.heightAnchor.constraint(equalToConstant: 300).isActive = true
@@ -117,41 +117,13 @@ class KeyboardViewController: UIInputViewController {
         indexLabel.text = "Index: \(index)"
         flagView.currentIndex = index
     }
+    
+}
 
-    
-    /**
-     * Fetches angle relative to view center point
-     * 12 o'clock is 270 degrees, 3 o'clock is 0 degrees
-     *
-     * From https://stackoverflow.com/a/7805311
-     */
-    private func getAngleInRadians(for point: CGPoint, in view: UIView) -> CGFloat {
-        let dx = point.x - view.frame.width / 2
-        let dy = -(point.y - view.frame.height / 2)
-        
-        var inRadians = atan2(dy, dx)
-        
-        if inRadians < 0 {
-            inRadians = abs(inRadians)
-        } else {
-            inRadians = 2 * CGFloat.pi - inRadians
-        }
-        
-        return inRadians
-    }
-    
-    private func getAngleInDegrees(for point: CGPoint, in view: UIView) -> CGFloat {
-        let dx = point.x - view.frame.width / 2
-        let dy = -(point.y - view.frame.height / 2)
-        
-        var inRadians = atan2(dy, dx)
-        
-        if inRadians < 0 {
-            inRadians = abs(inRadians)
-        } else {
-            inRadians = 2 * CGFloat.pi - inRadians
-        }
-        
-        return inRadians * 180 / CGFloat.pi
+extension KeyboardViewController: FlagViewDelegate {
+    func didTapSubmit(with semaphorePosition: SemaphorePosition) {
+        indexLabel.text = "left: \(semaphorePosition.left), right: \(semaphorePosition.right)"
+        guard let newCharacter = semaphoreDictionary[semaphorePosition] else { return }
+        textDocumentProxy.insertText(newCharacter)
     }
 }

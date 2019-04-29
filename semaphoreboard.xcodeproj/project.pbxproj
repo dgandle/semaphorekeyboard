@@ -18,6 +18,7 @@
 		91C0C4A7227685D3007F0CB7 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */; };
 		91C0C4A922769BAC007F0CB7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4A822769BAC007F0CB7 /* Utilities.swift */; };
 		91C0C4AB22769C76007F0CB7 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4AA22769C76007F0CB7 /* FlagView.swift */; };
+		91C0C4AD2276A864007F0CB7 /* SemaphoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4AC2276A864007F0CB7 /* SemaphoreModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		91C0C4A822769BAC007F0CB7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		91C0C4AA22769C76007F0CB7 /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
+		91C0C4AC2276A864007F0CB7 /* SemaphoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemaphoreModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */,
 				91C0C4A822769BAC007F0CB7 /* Utilities.swift */,
 				91C0C4AA22769C76007F0CB7 /* FlagView.swift */,
+				91C0C4AC2276A864007F0CB7 /* SemaphoreModel.swift */,
 			);
 			path = "semaphore-keyboard";
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				91C0C4A922769BAC007F0CB7 /* Utilities.swift in Sources */,
 				914E767C22766F7300651BC7 /* KeyboardViewController.swift in Sources */,
 				91C0C4AB22769C76007F0CB7 /* FlagView.swift in Sources */,
+				91C0C4AD2276A864007F0CB7 /* SemaphoreModel.swift in Sources */,
 				91C0C4A5227685BB007F0CB7 /* KeyboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

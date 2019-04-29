@@ -8,8 +8,16 @@
 
 import UIKit
 
+protocol FlagViewDelegate {
+    func didTapSubmit(with semaphorePosition: SemaphorePosition)
+}
+
 class KeyboardView: UIView {
 
+    @IBOutlet weak var submitButton: UIButton!
+    
+    var delegate: FlagViewDelegate?
+    
     let leftFlagView = FlagView()
     let rightFlagView = FlagView()
 
@@ -24,22 +32,27 @@ class KeyboardView: UIView {
     }
     
     private func setupView() {
-        leftFlagView.disabledIndex = 6
-        self.addSubview(leftFlagView)
-        leftFlagView.translatesAutoresizingMaskIntoConstraints = false
-        leftFlagView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        leftFlagView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        leftFlagView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        leftFlagView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 80).isActive = true
-        
-        rightFlagView.debugColor = .red
-        rightFlagView.disabledIndex = 2
+        rightFlagView.disabledIndex = 6
         self.addSubview(rightFlagView)
         rightFlagView.translatesAutoresizingMaskIntoConstraints = false
         rightFlagView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         rightFlagView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        rightFlagView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -80).isActive = true
-        rightFlagView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        rightFlagView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        rightFlagView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 80).isActive = true
+        
+        leftFlagView.debugColor = .red
+        leftFlagView.disabledIndex = 2
+        self.addSubview(leftFlagView)
+        leftFlagView.translatesAutoresizingMaskIntoConstraints = false
+        leftFlagView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        leftFlagView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        leftFlagView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -80).isActive = true
+        leftFlagView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+    }
+    
+    @IBAction func didTapSubmitButton(_ sender: Any) {
+        let position = SemaphorePosition(left: leftFlagView.currentIndex, right: rightFlagView.currentIndex)
+        delegate?.didTapSubmit(with: position)
     }
 
 }
