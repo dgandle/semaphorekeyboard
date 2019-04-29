@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		914E766422766F5600651BC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914E766322766F5600651BC7 /* AppDelegate.swift */; };
+		914E766622766F5600651BC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914E766522766F5600651BC7 /* ViewController.swift */; };
+		914E766922766F5600651BC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914E766722766F5600651BC7 /* Main.storyboard */; };
+		914E766B22766F5800651BC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914E766A22766F5800651BC7 /* Assets.xcassets */; };
+		914E766E22766F5800651BC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 914E766C22766F5800651BC7 /* LaunchScreen.storyboard */; };
+		914E767C22766F7300651BC7 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914E767B22766F7300651BC7 /* KeyboardViewController.swift */; };
+		914E768022766F7300651BC7 /* semaphore-keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 914E767922766F7300651BC7 /* semaphore-keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		91C0C4A5227685BB007F0CB7 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4A4227685BB007F0CB7 /* KeyboardView.swift */; };
+		91C0C4A7227685D3007F0CB7 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */; };
+		91C0C4A922769BAC007F0CB7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4A822769BAC007F0CB7 /* Utilities.swift */; };
+		91C0C4AB22769C76007F0CB7 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4AA22769C76007F0CB7 /* FlagView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		914E767E22766F7300651BC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 914E765822766F5600651BC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 914E767822766F7300651BC7;
+			remoteInfo = "semaphore-keyboard";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		914E768422766F7300651BC7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				914E768022766F7300651BC7 /* semaphore-keyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		914E766022766F5600651BC7 /* semaphoreboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = semaphoreboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		914E766322766F5600651BC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		914E766522766F5600651BC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		914E766822766F5600651BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		914E766A22766F5800651BC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		914E766D22766F5800651BC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		914E766F22766F5800651BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		914E767922766F7300651BC7 /* semaphore-keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "semaphore-keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		914E767B22766F7300651BC7 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		914E767D22766F7300651BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91C0C4A4227685BB007F0CB7 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		91C0C4A822769BAC007F0CB7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		91C0C4AA22769C76007F0CB7 /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		914E765D22766F5600651BC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		914E767622766F7300651BC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		914E765722766F5600651BC7 = {
+			isa = PBXGroup;
+			children = (
+				914E766222766F5600651BC7 /* semaphoreboard */,
+				914E767A22766F7300651BC7 /* semaphore-keyboard */,
+				914E766122766F5600651BC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		914E766122766F5600651BC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				914E766022766F5600651BC7 /* semaphoreboard.app */,
+				914E767922766F7300651BC7 /* semaphore-keyboard.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		914E766222766F5600651BC7 /* semaphoreboard */ = {
+			isa = PBXGroup;
+			children = (
+				914E766322766F5600651BC7 /* AppDelegate.swift */,
+				914E766522766F5600651BC7 /* ViewController.swift */,
+				914E766722766F5600651BC7 /* Main.storyboard */,
+				914E766A22766F5800651BC7 /* Assets.xcassets */,
+				914E766C22766F5800651BC7 /* LaunchScreen.storyboard */,
+				914E766F22766F5800651BC7 /* Info.plist */,
+			);
+			path = semaphoreboard;
+			sourceTree = "<group>";
+		};
+		914E767A22766F7300651BC7 /* semaphore-keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				914E767B22766F7300651BC7 /* KeyboardViewController.swift */,
+				914E767D22766F7300651BC7 /* Info.plist */,
+				91C0C4A4227685BB007F0CB7 /* KeyboardView.swift */,
+				91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */,
+				91C0C4A822769BAC007F0CB7 /* Utilities.swift */,
+				91C0C4AA22769C76007F0CB7 /* FlagView.swift */,
+			);
+			path = "semaphore-keyboard";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		914E765F22766F5600651BC7 /* semaphoreboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 914E767222766F5800651BC7 /* Build configuration list for PBXNativeTarget "semaphoreboard" */;
+			buildPhases = (
+				914E765C22766F5600651BC7 /* Sources */,
+				914E765D22766F5600651BC7 /* Frameworks */,
+				914E765E22766F5600651BC7 /* Resources */,
+				914E768422766F7300651BC7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				914E767F22766F7300651BC7 /* PBXTargetDependency */,
+			);
+			name = semaphoreboard;
+			productName = semaphoreboard;
+			productReference = 914E766022766F5600651BC7 /* semaphoreboard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		914E767822766F7300651BC7 /* semaphore-keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 914E768122766F7300651BC7 /* Build configuration list for PBXNativeTarget "semaphore-keyboard" */;
+			buildPhases = (
+				914E767522766F7300651BC7 /* Sources */,
+				914E767622766F7300651BC7 /* Frameworks */,
+				914E767722766F7300651BC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "semaphore-keyboard";
+			productName = "semaphore-keyboard";
+			productReference = 914E767922766F7300651BC7 /* semaphore-keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		914E765822766F5600651BC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Doug Gandle";
+				TargetAttributes = {
+					914E765F22766F5600651BC7 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					914E767822766F7300651BC7 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 914E765B22766F5600651BC7 /* Build configuration list for PBXProject "semaphoreboard" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 914E765722766F5600651BC7;
+			productRefGroup = 914E766122766F5600651BC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				914E765F22766F5600651BC7 /* semaphoreboard */,
+				914E767822766F7300651BC7 /* semaphore-keyboard */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		914E765E22766F5600651BC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				914E766E22766F5800651BC7 /* LaunchScreen.storyboard in Resources */,
+				914E766B22766F5800651BC7 /* Assets.xcassets in Resources */,
+				914E766922766F5600651BC7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		914E767722766F7300651BC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91C0C4A7227685D3007F0CB7 /* KeyboardView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		914E765C22766F5600651BC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				914E766622766F5600651BC7 /* ViewController.swift in Sources */,
+				914E766422766F5600651BC7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		914E767522766F7300651BC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91C0C4A922769BAC007F0CB7 /* Utilities.swift in Sources */,
+				914E767C22766F7300651BC7 /* KeyboardViewController.swift in Sources */,
+				91C0C4AB22769C76007F0CB7 /* FlagView.swift in Sources */,
+				91C0C4A5227685BB007F0CB7 /* KeyboardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		914E767F22766F7300651BC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 914E767822766F7300651BC7 /* semaphore-keyboard */;
+			targetProxy = 914E767E22766F7300651BC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		914E766722766F5600651BC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				914E766822766F5600651BC7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		914E766C22766F5800651BC7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				914E766D22766F5800651BC7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		914E767022766F5800651BC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		914E767122766F5800651BC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		914E767322766F5800651BC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D8Y8Z8FDA;
+				INFOPLIST_FILE = semaphoreboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgandle.semaphoreboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		914E767422766F5800651BC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D8Y8Z8FDA;
+				INFOPLIST_FILE = semaphoreboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dgandle.semaphoreboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		914E768222766F7300651BC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D8Y8Z8FDA;
+				INFOPLIST_FILE = "semaphore-keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dgandle.semaphoreboard.semaphore-keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		914E768322766F7300651BC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6D8Y8Z8FDA;
+				INFOPLIST_FILE = "semaphore-keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dgandle.semaphoreboard.semaphore-keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		914E765B22766F5600651BC7 /* Build configuration list for PBXProject "semaphoreboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				914E767022766F5800651BC7 /* Debug */,
+				914E767122766F5800651BC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		914E767222766F5800651BC7 /* Build configuration list for PBXNativeTarget "semaphoreboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				914E767322766F5800651BC7 /* Debug */,
+				914E767422766F5800651BC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		914E768122766F7300651BC7 /* Build configuration list for PBXNativeTarget "semaphore-keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				914E768222766F7300651BC7 /* Debug */,
+				914E768322766F7300651BC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 914E765822766F5600651BC7 /* Project object */;
+}
