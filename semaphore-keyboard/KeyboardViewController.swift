@@ -123,9 +123,13 @@ class KeyboardViewController: UIInputViewController {
 extension KeyboardViewController: FlagViewDelegate {
     func didTapSubmit(with semaphorePosition: SemaphorePosition) {
         indexLabel.text = "left: \(semaphorePosition.left), right: \(semaphorePosition.right)"
-        guard let newCharacter = semaphoreDictionary[semaphorePosition] else { return }
-        let shiftedCharacter = shift ? newCharacter : newCharacter.lowercased()
-        textDocumentProxy.insertText(shiftedCharacter)
+        guard let semaphoreCharacter = semaphoreDictionary[semaphorePosition] else { return }
+        guard let string = semaphoreCharacter.toString else {
+            textDocumentProxy.deleteBackward()
+            return
+        }
+        let shiftedString = shift ? string.uppercased() : string.lowercased()
+        textDocumentProxy.insertText(shiftedString)
     }
     
     func didTapShiftButton(isSelected: Bool) {
