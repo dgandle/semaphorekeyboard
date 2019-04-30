@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class FlagView: UIView {
+    
+    let centerView = UIView()
 
     let view0 = UIView()
     let view1 = UIView()
@@ -19,19 +22,25 @@ class FlagView: UIView {
     let view6 = UIView()
     let view7 = UIView()
     var views: [UIView] = []
-    var currentIndex = 0 {
-        didSet {
-            if let disabledIndex = disabledIndex, currentIndex == disabledIndex { return }
-            views.forEach { $0.alpha = 0.5; $0.isUserInteractionEnabled = false }
-            views[currentIndex].alpha = 1.0
-            views[currentIndex].isUserInteractionEnabled = true
-        }
-    }
-    var disabledIndex: Int?
+    var currentIndex = 4
+    var disabledIndex = 2
     
     var debugColor: UIColor = .blue {
         didSet {
             views.forEach { $0.backgroundColor = debugColor }
+        }
+    }
+    
+    var direction: FlagDirection = .left {
+        didSet {
+            switch direction {
+            case .left:
+                view2.isHidden = true
+                disabledIndex = 2
+            case .right:
+                view6.isHidden = true
+                disabledIndex = 6
+            }
         }
     }
     
@@ -45,9 +54,18 @@ class FlagView: UIView {
         setupView()
     }
     
+    func setCurrentIndex(_ index: Int) {
+        guard index != disabledIndex, index != currentIndex else { return }
+        currentIndex = index
+        views.forEach { $0.alpha = 0.5; $0.isUserInteractionEnabled = false }
+        views[currentIndex].alpha = 0.75
+        views[currentIndex].isUserInteractionEnabled = true
+        AudioServicesPlaySystemSound(1123)
+    }
+    
     private func setupView() {
+        self.backgroundColor = .clear
         
-        let centerView = UIView()
         centerView.backgroundColor = .black
         addSubview(centerView)
         centerView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +75,7 @@ class FlagView: UIView {
         centerView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         let radius: CGFloat = 100
-        let viewSize: CGFloat = 70
+        let viewSize: CGFloat = 85
         let anchorPointY = ((viewSize / 2.0) + radius) / viewSize
         let anglePerItem: CGFloat = 0.785398
         
@@ -76,8 +94,6 @@ class FlagView: UIView {
             view.layer.anchorPoint = CGPoint(x: 0.5, y: anchorPointY)
             view.transform = CGAffineTransform(rotationAngle: anglePerItem * CGFloat(index) )
         }
-        
-        currentIndex = 0
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {

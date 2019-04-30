@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum FlagDirection {
+    case left
+    case right
+}
+
 struct SemaphorePosition: Hashable{
     var left: Int = 0
     var right: Int = 0

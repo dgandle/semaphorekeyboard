@@ -17,23 +17,17 @@ class KeyboardViewController: UIInputViewController {
 
     var keyboardView: KeyboardView!
     
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
-    }
+    var debugMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 2
         let nib = UINib(nibName: "KeyboardView", bundle: nil)
         let objects = nib.instantiate(withOwner: nil, options: nil)
         keyboardView = objects.first as? KeyboardView
         guard let inputView = inputView else { return }
         inputView.addSubview(keyboardView)
         
-        // 3
         keyboardView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             keyboardView.leftAnchor.constraint(equalTo: inputView.leftAnchor),
@@ -51,20 +45,15 @@ class KeyboardViewController: UIInputViewController {
         inputView.translatesAutoresizingMaskIntoConstraints = false
         inputView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         inputView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
+        
+        keyboardView.debugMode = debugMode
+        indexLabel.isHidden = !debugMode
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
     }
-    
-    override func textWillChange(_ textInput: UITextInput?) {
-        // The app is about to change the document's contents. Perform any preparation here.
-    }
-    
-    override func textDidChange(_ textInput: UITextInput?) {
-        // The app has just changed the document's contents, the document context has been updated.
-    }
-    
+
     private func setupGestureRecognizer(for view: UIView) {
         view.isUserInteractionEnabled = true
         keyboardView.leftFlagView.addGestureRecognizer(leftPan)
@@ -114,8 +103,15 @@ class KeyboardViewController: UIInputViewController {
     }
     
     private func moveFlagTo(index: Int, for flagView: FlagView) {
-        indexLabel.text = "Index: \(index)"
-        flagView.currentIndex = index
+        flagView.setCurrentIndex(index)
+        indexLabel.text = "Index: \(flagView.currentIndex)"
+        guard let image = getImage(for: index, and: flagView.direction) else { return }
+        switch flagView.direction {
+        case .left:
+            keyboardView.leftImageView.image = image
+        case .right:
+            keyboardView.rightImageView.image = image
+        }
     }
     
 }
