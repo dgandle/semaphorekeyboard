@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class KeyboardButton: UIButton {
     
     var text: String
+    var isSticky = false
     
     let defaultColor = UIColor(red:0.82, green:0.85, blue:0.88, alpha:1.0)
     let selectedColor = UIColor(red:0.96, green:0.96, blue:0.98, alpha:1.0)
@@ -44,12 +46,25 @@ class KeyboardButton: UIButton {
         
         self.setTitle(text, for: .normal)
         self.setTitleColor(shadowColor, for: .normal)
+        
+        self.addTarget(self, action: #selector(playKeyboardClick), for: .touchDown)
     }
     
     override open var isHighlighted: Bool {
         didSet {
+            guard !isSticky || !isSelected else { return }
             backgroundColor = isHighlighted ? selectedColor : defaultColor
         }
+    }
+    
+    override open var isSelected: Bool {
+        didSet {
+            backgroundColor = isSelected ? selectedColor : defaultColor
+        }
+    }
+    
+    @objc func playKeyboardClick() {
+        AudioServicesPlaySystemSound(1156)
     }
 
 }

@@ -19,6 +19,8 @@ class KeyboardViewController: UIInputViewController {
     
     var debugMode = false
     
+    private var shift: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,12 +52,14 @@ class KeyboardViewController: UIInputViewController {
         indexLabel.isHidden = !debugMode
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        keyboardView.setNextKeyboardVisible(needsInputModeSwitchKey)
+        keyboardView.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
     }
 
     private func setupGestureRecognizer(for view: UIView) {
         view.isUserInteractionEnabled = true
+        
         keyboardView.leftFlagView.addGestureRecognizer(leftPan)
         keyboardView.rightFlagView.addGestureRecognizer(rightPan)
     }
@@ -120,6 +124,11 @@ extension KeyboardViewController: FlagViewDelegate {
     func didTapSubmit(with semaphorePosition: SemaphorePosition) {
         indexLabel.text = "left: \(semaphorePosition.left), right: \(semaphorePosition.right)"
         guard let newCharacter = semaphoreDictionary[semaphorePosition] else { return }
-        textDocumentProxy.insertText(newCharacter)
+        let shiftedCharacter = shift ? newCharacter : newCharacter.lowercased()
+        textDocumentProxy.insertText(shiftedCharacter)
+    }
+    
+    func didTapShiftButton(isSelected: Bool) {
+        self.shift = isSelected
     }
 }

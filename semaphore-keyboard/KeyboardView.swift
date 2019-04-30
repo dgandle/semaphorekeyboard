@@ -11,6 +11,7 @@ import AudioToolbox
 
 protocol FlagViewDelegate {
     func didTapSubmit(with semaphorePosition: SemaphorePosition)
+    func didTapShiftButton(isSelected: Bool)
 }
 
 class KeyboardView: UIView {
@@ -73,21 +74,14 @@ class KeyboardView: UIView {
         
         shiftButton.addTarget(self, action: #selector(didTapShiftButton(_:)), for: .touchUpInside)
         shiftButton.setImage(UIImage(named: "shift"), for: .normal)
+        shiftButton.setImage(UIImage(named: "shift_pressed"), for: .selected)
+        shiftButton.isSticky = true
         self.addSubview(shiftButton)
         shiftButton.translatesAutoresizingMaskIntoConstraints = false
         shiftButton.widthAnchor.constraint(equalToConstant: 42).isActive = true
         shiftButton.heightAnchor.constraint(equalToConstant: 42).isActive = true
         shiftButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 3).isActive = true
         shiftButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
-        
-        nextKeyboardButton.addTarget(self, action: #selector(didTapNextKeyboardButton(_:)), for: .touchUpInside)
-        nextKeyboardButton.setImage(UIImage(named: "globe"), for: .normal)
-        self.addSubview(nextKeyboardButton)
-        nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
-        nextKeyboardButton.widthAnchor.constraint(equalToConstant: 42).isActive = true
-        nextKeyboardButton.heightAnchor.constraint(equalToConstant: 42).isActive = true
-        nextKeyboardButton.leadingAnchor.constraint(equalTo: shiftButton.trailingAnchor, constant: 4).isActive = true
-        nextKeyboardButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
         
         submitButton.addTarget(self, action: #selector(didTapSubmitButton(_:)), for: .touchUpInside)
         self.addSubview(submitButton)
@@ -99,18 +93,26 @@ class KeyboardView: UIView {
         
     }
     
-    @objc func didTapShiftButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1156)
-        // set caps, maybe on delegate?
+    func setNextKeyboardVisible(_ needsInputModeSwitchKey: Bool) {
+        if needsInputModeSwitchKey {
+            nextKeyboardButton.setImage(UIImage(named: "globe"), for: .normal)
+            self.addSubview(nextKeyboardButton)
+            nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = false
+            nextKeyboardButton.widthAnchor.constraint(equalToConstant: 42).isActive = true
+            nextKeyboardButton.heightAnchor.constraint(equalToConstant: 42).isActive = true
+            nextKeyboardButton.leadingAnchor.constraint(equalTo: shiftButton.trailingAnchor, constant: 4).isActive = true
+            nextKeyboardButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10).isActive = true
+        }
     }
     
-    @objc func didTapNextKeyboardButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1156)
-        // delegate call to switch keybaords
+    @objc func didTapShiftButton(_ sender: Any) {
+//        AudioServicesPlaySystemSound(1156)
+        shiftButton.isSelected = !shiftButton.isSelected
+        delegate?.didTapShiftButton(isSelected: shiftButton.isSelected)
     }
     
     @objc func didTapSubmitButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1156)
+//        AudioServicesPlaySystemSound(1156)
         let position = SemaphorePosition(left: leftFlagView.currentIndex, right: rightFlagView.currentIndex)
         delegate?.didTapSubmit(with: position)
     }
