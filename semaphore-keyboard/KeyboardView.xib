@@ -18,7 +18,6 @@
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="IqI-Wi-DkI">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-xB-CPc" userLabel="bottom border">
                     <rect key="frame" x="0.0" y="299" width="375" height="1"/>
@@ -66,6 +65,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="bodyImageView" destination="IqI-Wi-DkI" id="hBg-9S-Ell"/>
                 <outlet property="leftImageView" destination="8YN-87-OBk" id="Yhh-h4-dC7"/>
                 <outlet property="rightImageView" destination="qqE-cX-eKU" id="XjL-lA-4D5"/>
             </connections>

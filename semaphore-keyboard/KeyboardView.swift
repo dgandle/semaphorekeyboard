@@ -16,10 +16,13 @@ protocol FlagViewDelegate {
 
 class KeyboardView: UIView {
 
+    @IBOutlet weak var bodyImageView: UIImageView!
     @IBOutlet weak var rightImageView: UIImageView!
     @IBOutlet weak var leftImageView: UIImageView!
     
     var delegate: FlagViewDelegate?
+    
+    let characterLabel = UILabel()
     
     let leftFlagView = FlagView()
     let rightFlagView = FlagView()
@@ -55,6 +58,18 @@ class KeyboardView: UIView {
     }
     
     private func setupView() {
+        
+        characterLabel.font = UIFont.systemFont(ofSize: 280, weight: .semibold)
+        characterLabel.textColor = UIColor(red:0.44, green:0.50, blue:0.58, alpha:0.25)
+        characterLabel.textAlignment = .center
+        characterLabel.backgroundColor = .white
+        self.addSubview(characterLabel)
+        characterLabel.translatesAutoresizingMaskIntoConstraints = false
+        characterLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        characterLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        characterLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        characterLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        self.sendSubviewToBack(characterLabel)
         
         rightFlagView.direction = .right
         self.addSubview(rightFlagView)
@@ -105,14 +120,29 @@ class KeyboardView: UIView {
         }
     }
     
+    func setCharacterLabel(character: SemaphoreCharacter?) {
+        guard let character = character else {
+            characterLabel.text = nil
+            return
+        }
+        switch character {
+        case .delete:
+            // set image? or unicode for delete icon
+            characterLabel.text = "d"
+        case .space:
+            characterLabel.text = "_"
+        default:
+            characterLabel.text = shiftButton.isSelected ? character.toString?.uppercased() : character.toString?.lowercased()
+        }
+    }
+    
     @objc func didTapShiftButton(_ sender: Any) {
-//        AudioServicesPlaySystemSound(1156)
         shiftButton.isSelected = !shiftButton.isSelected
+        characterLabel.text = shiftButton.isSelected ? characterLabel.text?.uppercased() : characterLabel.text?.lowercased()
         delegate?.didTapShiftButton(isSelected: shiftButton.isSelected)
     }
     
     @objc func didTapSubmitButton(_ sender: Any) {
-//        AudioServicesPlaySystemSound(1156)
         let position = SemaphorePosition(left: leftFlagView.currentIndex, right: rightFlagView.currentIndex)
         delegate?.didTapSubmit(with: position)
     }

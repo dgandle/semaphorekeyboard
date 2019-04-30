@@ -116,6 +116,15 @@ class KeyboardViewController: UIInputViewController {
         case .right:
             keyboardView.rightImageView.image = image
         }
+        setCharacterLabelText()
+    }
+    
+    private func setCharacterLabelText() {
+        let leftIndex = keyboardView.leftFlagView.currentIndex
+        let rightIndex = keyboardView.rightFlagView.currentIndex
+        let position = SemaphorePosition(left: leftIndex, right: rightIndex)
+        let semaphoreCharacter = semaphoreDictionary[position]
+        keyboardView.setCharacterLabel(character: semaphoreCharacter)
     }
     
 }
