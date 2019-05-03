@@ -16,6 +16,10 @@
 		914E768022766F7300651BC7 /* semaphore-keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 914E767922766F7300651BC7 /* semaphore-keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9153346F2277B9F9008BFB71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 914E766A22766F5800651BC7 /* Assets.xcassets */; };
 		915334712277DFF1008BFB71 /* KeyboardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915334702277DFF1008BFB71 /* KeyboardButton.swift */; };
+		91A39E66227A5F740003D7D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91A39E65227A5F740003D7D0 /* Settings.bundle */; };
+		91A39E69227AA5B10003D7D0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E67227AA5B10003D7D0 /* SecondViewController.swift */; };
+		91A39E6A227AA5B10003D7D0 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A39E68227AA5B10003D7D0 /* SecondViewController.xib */; };
+		91A39E6C227AA78B0003D7D0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E6B227AA78B0003D7D0 /* Utilities.swift */; };
 		91C0C4A5227685BB007F0CB7 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4A4227685BB007F0CB7 /* KeyboardView.swift */; };
 		91C0C4A7227685D3007F0CB7 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */; };
 		91C0C4A922769BAC007F0CB7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4A822769BAC007F0CB7 /* Utilities.swift */; };
@@ -59,6 +63,10 @@
 		914E767B22766F7300651BC7 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		914E767D22766F7300651BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		915334702277DFF1008BFB71 /* KeyboardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardButton.swift; sourceTree = "<group>"; };
+		91A39E65227A5F740003D7D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		91A39E67227AA5B10003D7D0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		91A39E68227AA5B10003D7D0 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		91A39E6B227AA78B0003D7D0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		91C0C4A4227685BB007F0CB7 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		91C0C4A822769BAC007F0CB7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -111,6 +119,10 @@
 				914E766A22766F5800651BC7 /* Assets.xcassets */,
 				914E766C22766F5800651BC7 /* LaunchScreen.storyboard */,
 				914E766F22766F5800651BC7 /* Info.plist */,
+				91A39E67227AA5B10003D7D0 /* SecondViewController.swift */,
+				91A39E68227AA5B10003D7D0 /* SecondViewController.xib */,
+				91A39E65227A5F740003D7D0 /* Settings.bundle */,
+				91A39E6B227AA78B0003D7D0 /* Utilities.swift */,
 			);
 			path = semaphoreboard;
 			sourceTree = "<group>";
@@ -211,9 +223,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A39E66227A5F740003D7D0 /* Settings.bundle in Resources */,
 				914E766E22766F5800651BC7 /* LaunchScreen.storyboard in Resources */,
 				914E766B22766F5800651BC7 /* Assets.xcassets in Resources */,
 				914E766922766F5600651BC7 /* Main.storyboard in Resources */,
+				91A39E6A227AA5B10003D7D0 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +247,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A39E69227AA5B10003D7D0 /* SecondViewController.swift in Sources */,
 				914E766622766F5600651BC7 /* ViewController.swift in Sources */,
+				91A39E6C227AA78B0003D7D0 /* Utilities.swift in Sources */,
 				914E766422766F5600651BC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

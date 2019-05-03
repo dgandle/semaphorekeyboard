@@ -12,9 +12,31 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(presentSecondViewController),
+            name: UIApplication.willEnterForegroundNotification,
+            object: nil
+        )
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presentSecondViewController()
+    }
+    
+    @objc private func presentSecondViewController() {
+        if isKeyboardExtensionEnabled() {
+            self.present(SecondViewController(), animated: false, completion: nil)
+        }
+    }
+    
+    @IBAction func didTapGoToSettingsButton(_ sender: Any) {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)    
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }
 

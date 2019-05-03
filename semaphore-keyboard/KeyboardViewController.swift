@@ -52,7 +52,7 @@ class KeyboardViewController: UIInputViewController {
         indexLabel.isHidden = !debugMode
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         keyboardView.setNextKeyboardVisible(needsInputModeSwitchKey)
         keyboardView.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
     }

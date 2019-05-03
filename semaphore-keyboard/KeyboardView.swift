@@ -59,17 +59,7 @@ class KeyboardView: UIView {
     
     private func setupView() {
         
-        characterLabel.font = UIFont.systemFont(ofSize: 280, weight: .semibold)
-        characterLabel.textColor = UIColor(red:0.44, green:0.50, blue:0.58, alpha:0.25)
-        characterLabel.textAlignment = .center
-        characterLabel.backgroundColor = .white
-        self.addSubview(characterLabel)
-        characterLabel.translatesAutoresizingMaskIntoConstraints = false
-        characterLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        characterLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        characterLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        characterLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        self.sendSubviewToBack(characterLabel)
+        setupCharacterLabel()
         
         rightFlagView.direction = .right
         self.addSubview(rightFlagView)
@@ -108,6 +98,33 @@ class KeyboardView: UIView {
         
     }
     
+    private func setupCharacterLabel() {
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .white
+        self.addSubview(backgroundView)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        characterLabel.font = UIFont.systemFont(ofSize: 300, weight: .semibold)
+        characterLabel.textColor = UIColor(red:0.44, green:0.50, blue:0.58, alpha:0.15)
+//        characterLabel.textAlignment = .center
+//        characterLabel.backgroundColor = .white
+        characterLabel.sizeToFit()
+        backgroundView.addSubview(characterLabel)
+        characterLabel.translatesAutoresizingMaskIntoConstraints = false
+        characterLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        characterLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 30).isActive = true
+//        characterLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20).isActive = true
+        characterLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor).isActive = true
+        characterLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10).isActive = true
+        characterLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        self.sendSubviewToBack(backgroundView)
+    }
+    
     func setNextKeyboardVisible(_ needsInputModeSwitchKey: Bool) {
         if needsInputModeSwitchKey {
             nextKeyboardButton.setImage(UIImage(named: "globe"), for: .normal)
@@ -128,9 +145,9 @@ class KeyboardView: UIView {
         switch character {
         case .delete:
             // set image? or unicode for delete icon
-            characterLabel.text = "d"
+            characterLabel.text = "⌫"
         case .space:
-            characterLabel.text = "_"
+            characterLabel.text = "␣"
         default:
             characterLabel.text = shiftButton.isSelected ? character.toString?.uppercased() : character.toString?.lowercased()
         }
