@@ -17,7 +17,7 @@ class KeyboardViewController: UIInputViewController {
 
     var keyboardView: KeyboardView!
     
-    var debugMode = false
+    var debugMode = true
     
     private var shift: Bool = false
     
@@ -37,34 +37,24 @@ class KeyboardViewController: UIInputViewController {
         keyboardView.nextKeyboardButton.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        guard let inputView = inputView else { return }
-        inputView.translatesAutoresizingMaskIntoConstraints = false
-        let widthConstraint = inputView.constraints.first { $0.firstAnchor == inputView.widthAnchor }
-        widthConstraint?.constant = size.width
-    }
-    
     private func setupKeyboardView() {
         let nib = UINib(nibName: "KeyboardView", bundle: nil)
         let objects = nib.instantiate(withOwner: nil, options: nil)
         keyboardView = objects.first as? KeyboardView
-        guard let inputView = inputView else { return }
+        guard let inputView = view else { return }
         inputView.addSubview(keyboardView)
-        
+
         keyboardView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             keyboardView.leftAnchor.constraint(equalTo: inputView.leftAnchor),
             keyboardView.topAnchor.constraint(equalTo: inputView.topAnchor),
             keyboardView.rightAnchor.constraint(equalTo: inputView.rightAnchor),
-            keyboardView.bottomAnchor.constraint(equalTo: inputView.bottomAnchor)
+            keyboardView.bottomAnchor.constraint(equalTo: inputView.bottomAnchor),
+            keyboardView.heightAnchor.constraint(equalToConstant: 300)
             ])
         
         keyboardView.delegate = self
         setupGestureRecognizer(for: keyboardView)
-        
-        inputView.translatesAutoresizingMaskIntoConstraints = false
-        inputView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        inputView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
         
         keyboardView.debugMode = debugMode
     }
