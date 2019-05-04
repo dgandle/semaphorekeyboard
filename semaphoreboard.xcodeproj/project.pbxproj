@@ -20,6 +20,7 @@
 		91A39E69227AA5B10003D7D0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E67227AA5B10003D7D0 /* SecondViewController.swift */; };
 		91A39E6A227AA5B10003D7D0 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A39E68227AA5B10003D7D0 /* SecondViewController.xib */; };
 		91A39E6C227AA78B0003D7D0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A39E6B227AA78B0003D7D0 /* Utilities.swift */; };
+		91AC4BC4227CF73900E554B8 /* DeviceUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC4BC3227CF73900E554B8 /* DeviceUtilities.swift */; };
 		91C0C4A5227685BB007F0CB7 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4A4227685BB007F0CB7 /* KeyboardView.swift */; };
 		91C0C4A7227685D3007F0CB7 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */; };
 		91C0C4A922769BAC007F0CB7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C0C4A822769BAC007F0CB7 /* Utilities.swift */; };
@@ -67,6 +68,7 @@
 		91A39E67227AA5B10003D7D0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		91A39E68227AA5B10003D7D0 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		91A39E6B227AA78B0003D7D0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		91AC4BC3227CF73900E554B8 /* DeviceUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtilities.swift; sourceTree = "<group>"; };
 		91C0C4A4227685BB007F0CB7 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		91C0C4A6227685D3007F0CB7 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		91C0C4A822769BAC007F0CB7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				91A39E68227AA5B10003D7D0 /* SecondViewController.xib */,
 				91A39E65227A5F740003D7D0 /* Settings.bundle */,
 				91A39E6B227AA78B0003D7D0 /* Utilities.swift */,
+				91AC4BC3227CF73900E554B8 /* DeviceUtilities.swift */,
 			);
 			path = semaphoreboard;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				91A39E69227AA5B10003D7D0 /* SecondViewController.swift in Sources */,
 				914E766622766F5600651BC7 /* ViewController.swift in Sources */,
 				91A39E6C227AA78B0003D7D0 /* Utilities.swift in Sources */,
+				91AC4BC4227CF73900E554B8 /* DeviceUtilities.swift in Sources */,
 				914E766422766F5600651BC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dgandle.semaphoreboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -447,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dgandle.semaphoreboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

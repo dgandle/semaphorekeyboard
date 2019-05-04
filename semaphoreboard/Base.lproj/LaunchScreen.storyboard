@@ -18,16 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_large" translatesAutoresizingMaskIntoConstraints="NO" id="Ano-Os-l8x">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Ano-Os-l8x">
+                                <rect key="frame" x="63" y="304" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="288" id="Tj9-bz-9J8"/>
+                                    <constraint firstAttribute="width" constant="288" id="XXJ-Ap-5Bx"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ano-Os-l8x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="00b-Fa-xWt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ano-Os-l8x" secondAttribute="trailing" constant="20" id="9Y3-qH-EQR"/>
-                            <constraint firstItem="Ano-Os-l8x" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Nn6-4p-7gd"/>
-                            <constraint firstItem="Ano-Os-l8x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oNt-1n-71j"/>
+                            <constraint firstItem="Ano-Os-l8x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eOu-a5-hzO"/>
+                            <constraint firstItem="Ano-Os-l8x" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="szF-vM-A0S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_large" width="512" height="512"/>
+        <image name="icon_splash" width="281" height="192"/>
     </resources>
 </document>

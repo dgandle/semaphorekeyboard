@@ -20,6 +20,8 @@ class SecondViewController: UIViewController {
         textField.becomeFirstResponder()
         textField.alpha = 0.0
         
+        hideImageIfSmallPhone()
+        
         setupInstructionsLabel()
         
         NotificationCenter.default.addObserver(self,
@@ -47,6 +49,15 @@ class SecondViewController: UIViewController {
         attributedString.replaceCharacters(in: NSRange(location: 34, length: 14), with: boldString)
         
         instructionsLabel.attributedText = attributedString
+    }
+    
+    private func hideImageIfSmallPhone() {
+        switch UIDevice().type {
+        case .iPhoneSE, .iPhone5, .iPhone5S:
+            imageView.isHidden = true
+        default:
+            break
+        }
     }
     
     @objc func changeInputMode(_ notification: Notification) {

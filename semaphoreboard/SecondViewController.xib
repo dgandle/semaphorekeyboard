@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait">
+    <device id="ipad11_0rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,25 +20,26 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try out your new keyboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZ1-al-TT1">
-                    <rect key="frame" x="26" y="70" width="323" height="32"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try out your new keyboard" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZ1-al-TT1">
+                    <rect key="frame" x="26" y="50" width="782" height="31.5"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap and hold the globe key and select Flag Semaphore from the menu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiI-UX-f1X">
-                    <rect key="frame" x="26" y="128" width="323" height="40.666666666666657"/>
+                    <rect key="frame" x="26" y="107.5" width="782" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="jEk-An-hBA">
-                    <rect key="frame" x="26" y="194.66666666666663" width="323" height="190"/>
+                    <rect key="frame" x="255.5" y="154" width="323" height="190"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="190" id="a7Q-HB-fVJ"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="323" id="g6t-DF-gfR"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -47,7 +48,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ready to receive..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8pR-8w-Rfl">
-                    <rect key="frame" x="26" y="210.66666666666666" width="323" height="30"/>
+                    <rect key="frame" x="26" y="170" width="782" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
@@ -58,15 +59,18 @@
                 <constraint firstItem="jEk-An-hBA" firstAttribute="top" secondItem="tiI-UX-f1X" secondAttribute="bottom" constant="26" id="8XZ-Z0-qQd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8pR-8w-Rfl" secondAttribute="trailing" constant="26" id="9xF-lq-aLb"/>
                 <constraint firstItem="8pR-8w-Rfl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="IGI-Um-Dde"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jEk-An-hBA" secondAttribute="trailing" constant="26" id="JGE-3q-KIR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jEk-An-hBA" secondAttribute="trailing" priority="750" constant="26" id="JGE-3q-KIR"/>
+                <constraint firstItem="tiI-UX-f1X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ngh-zS-w5j"/>
                 <constraint firstItem="tiI-UX-f1X" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="PHT-eT-QfM"/>
+                <constraint firstItem="8pR-8w-Rfl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Puo-R9-pOg"/>
+                <constraint firstItem="jEk-An-hBA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SpN-cP-UFg"/>
                 <constraint firstItem="8pR-8w-Rfl" firstAttribute="top" secondItem="tiI-UX-f1X" secondAttribute="bottom" constant="42" id="Tha-kh-nDO"/>
                 <constraint firstItem="OZ1-al-TT1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="bSr-PP-nIa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OZ1-al-TT1" secondAttribute="trailing" constant="26" id="epB-G1-ZVI"/>
                 <constraint firstItem="OZ1-al-TT1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="26" id="jYq-LX-5kF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tiI-UX-f1X" secondAttribute="trailing" constant="26" id="uIb-fi-m5O"/>
                 <constraint firstItem="tiI-UX-f1X" firstAttribute="top" secondItem="OZ1-al-TT1" secondAttribute="bottom" constant="26" id="xid-Lh-tV3"/>
-                <constraint firstItem="jEk-An-hBA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="zLh-9j-fiH"/>
+                <constraint firstItem="jEk-An-hBA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" priority="750" constant="26" id="zLh-9j-fiH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.200000000000003" y="35.467980295566505"/>

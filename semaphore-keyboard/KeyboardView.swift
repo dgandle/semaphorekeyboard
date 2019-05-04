@@ -111,14 +111,10 @@ class KeyboardView: UIView {
         
         characterLabel.font = UIFont.systemFont(ofSize: 300, weight: .semibold)
         characterLabel.textColor = UIColor(red:0.44, green:0.50, blue:0.58, alpha:0.15)
-//        characterLabel.textAlignment = .center
-//        characterLabel.backgroundColor = .white
         characterLabel.sizeToFit()
         backgroundView.addSubview(characterLabel)
         characterLabel.translatesAutoresizingMaskIntoConstraints = false
         characterLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        characterLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 30).isActive = true
-//        characterLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 20).isActive = true
         characterLabel.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor).isActive = true
         characterLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10).isActive = true
         characterLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
@@ -147,7 +143,8 @@ class KeyboardView: UIView {
             // set image? or unicode for delete icon
             characterLabel.text = "⌫"
         case .space:
-            characterLabel.text = "␣"
+//            characterLabel.text = "␣"
+            characterLabel.text = "_"
         default:
             characterLabel.text = shiftButton.isSelected ? character.toString?.uppercased() : character.toString?.lowercased()
         }
